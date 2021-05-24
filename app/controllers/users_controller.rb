@@ -15,6 +15,7 @@ class UsersController < ApplicationController
       flash[:success] = "Welcome to the Michigan Kuchikomi Family!"
       redirect_to @user
     else
+      flash.now[:danger] = 'Invalid email/password combination'
       render 'new'
     end
   end
