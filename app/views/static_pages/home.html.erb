@@ -1,3 +1,20 @@
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <%= render 'shared/user_info' %>
+      </section>
+      <section class="micropost_form">
+        <%= render 'shared/micropost_form' %>
+      </section>
+    </aside>
+    <div class="col-md-8">
+      <h3>Micropost Feed</h3>
+      <%= render 'shared/feed' %>
+    </div>
+  </div>
+<% else %>
+
 <div class="center jumbotron">
   <h1>Welcome to Michigan Kuchikomi!</h1>
   <h1>ミシガン口コミへようこそ!</h1>
@@ -7,6 +24,7 @@
 
   <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
 </div>
+<% end %>
 
 <%= link_to image_tag("worldometers-logo.gif", alt: "worldometers COVID-19 CORONAVIRUS PANDEMIC report", width: "200px"), "https://www.worldometers.info/coronavirus/" %>
 <p>COVID Live Update by Worldometer</p>
