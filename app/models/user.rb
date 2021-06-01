@@ -1,4 +1,8 @@
 class User < ApplicationRecord
+  has_many :votes
+  has_many :comments
+  has_many :posts
+  has_many :communities, through: :subscriptions
   has_many :microposts, dependent: :destroy
   attr_accessor :remember_token, :activation_token, :reset_token
   before_save   :downcase_email
@@ -72,6 +76,15 @@ class User < ApplicationRecord
   def feed
     Micropost.where("user_id = ?", id)
   end
+  
+  def upvoted_post_ids
+    self.votes.where(upvote: true).pluck(:post_id)
+  end 
+
+  def downvoted_post_ids
+    self.votes.where(upvote: false).pluck(:post_id)
+  end
+
 
   private
 
@@ -85,4 +98,5 @@ class User < ApplicationRecord
       self.activation_token  = User.new_token
       self.activation_digest = User.digest(activation_token)
     end
+
 end

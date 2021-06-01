@@ -7,9 +7,15 @@
     <% flash.each do |message_type, message| %>
       <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
     <% end %>
-    <%# # .app-title.navbar.navbar-expand-md.navbar-light.g-light.navbar-brand MichiganKuchikomi
-    # .container %>
-    <%= yield %>
+    <section class="bg-light"> <%#淡い水色に変える？%>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 pt-4">
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </section>
     <%= render 'layouts/footer' %>
     <%= debug(params) if Rails.env.development? %>
     </div>

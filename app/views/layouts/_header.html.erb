@@ -1,29 +1,43 @@
-<header class="navbar navbar-fixed-top navbar-default">
-  <div class="container">
-    <%= link_to "ミシガン口コミ", root_path, id: "logo" %>
-    <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home",   root_path %></li>
-        <li><%= link_to "Help",   help_path %></li>
-        <% if logged_in? %>
-          <li><%= link_to "Users", users_path %></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              Account <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-              <li><%= link_to "Profile", current_user %></li>
-              <li><%= link_to "Settings", edit_user_path(current_user) %></li>
-              <li class="divider"></li>
-              <li>
-                <%= link_to "Log out", logout_path, method: :delete %>
-              </li>
-            </ul>
-          </li>
-        <% else %>
-        <li><%= link_to "Log in", login_path %></li>
-        <% end %>
-      </ul>
-    </nav>
-  </div>
-</header>
+<div class="container">
+  <nav class="navbar navbar-expand-lg fixed-top pt-3 navbar-light bg-light">
+      <%= link_to "ミシガン口コミ", root_path, class: "navbar-brand" %>
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navber" aria-controls="navber" aria-expanded="false" aria-label="ナビゲーションの切替">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+        <div class="collapse navbar-collapse" id="navber">
+          <div class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <%= link_to "Home",   root_path, class: "btn btn-outline-primary" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Help",   help_path, class: "btn btn-outline-primary" %>
+            </li>
+            <% if logged_in? %>
+            <li class="nav-item">
+              <%= link_to "Users", users_path, class: "btn btn-outline-primary" %>
+            </li>
+            <div class="float-right">
+            <div class="dropdown show float-right">
+              <button id="dropdown1" class="btn btn-outline-primary dropdown-toggle"   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <%= current_user.name %>
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdown-menu-link">
+                <%= link_to "Profile", current_user, class: "dropdown-item" %>
+                <%= link_to "Settings", edit_user_path(current_user), class: "dropdown-item" %>
+                <div class="dropdown-divider"></div>
+                <%= link_to "Log out", logout_path, method: :delete, class: "dropdown-item" %>
+              </div> 
+              </div>
+              <div class="karma float-left mt-2 mr-2">
+                <span class="fa fa-star text-warning"></span>
+                <%= current_user.karma %>
+              </div>
+            <% else %>
+            <%= link_to "Log in / Sign up", login_path, class: "btn btn-outline-primary" %>
+            <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+  </nav> 
+</div>

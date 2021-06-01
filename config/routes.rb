@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'keijiban', to: 'keijiban#index'
   get 'password_resets/new'
   get 'password_resets/edit'
   root 'static_pages#home'
@@ -13,4 +14,10 @@ Rails.application.routes.draw do
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :microposts,          only: [:create, :destroy]
+  resources :communities do
+    resources :posts
+  end
+  resources :subscriptions
+  resources :comments, only: [:create]
+  post "post/vote" => "votes#create"
 end

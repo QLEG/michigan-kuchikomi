@@ -1,9 +1,7 @@
-@import "bootstrap-sprockets";
-@import "bootstrap"; 
+// @import "bootstrap-sprockets";
+@import 'bootstrap';
 
-/* mixins, variables, etc. */
-
-$gray-medium-light: #eaeaea;
+// gray-medium-light: #eaeaea;
 
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
@@ -14,7 +12,7 @@ $gray-medium-light: #eaeaea;
 /* universal */
 
 body {
-  padding-top: 60px;
+  padding-top: 64px;
 }
 
 section {
@@ -34,9 +32,10 @@ textarea {
 
 /* typography */
 
-h1, h2, h3, h4, h5, h6 {
-  line-height: 1;
-}
+// h3をコメントアウトしないとCommunity/showで"Create New Post"下部にマージンができてしまう。
+// h1, h2, h3, h4, h5, h6 {
+//   line-height: 1;
+// }
 
 h1 {
   font-size: 3em;
@@ -45,33 +44,28 @@ h1 {
   text-align: center;
 }
 
-h2 {
-  font-size: 1.2em;
-  letter-spacing: -1px;
-  margin-bottom: 30px;
-  text-align: center;
-  font-weight: normal;
-  color: $gray-light;
-}
+// h2 {
+//   font-size: 1.2em;
+//   letter-spacing: -1px;
+//   margin-bottom: 30px;
+//   text-align: center;
+//   font-weight: normal;
+//   color: gray-light;
+// }
 
-p {
-  font-size: 1.1em;
-  line-height: 1.7em;
-}
+// p {
+//   font-size: 1.1em;
+//   line-height: 1.7em;
+// }
 
 
 /* header */
-
-.navbar-default {
-  background-color: white;
-  color:  white;
-}
 
 #logo {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: $gray;
+  color: gray;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
@@ -87,12 +81,12 @@ p {
 footer {
   margin-top: 45px;
   padding-top: 5px;
-  border-top: 1px solid $gray-medium-light;
-  color: $gray-light;
+  border-top: 1px solid gray-medium-light;
+  color: gray-light;
   a {
-    color: $gray;
+    color: gray;
     &:hover {
-      color: $gray-darker;
+      color: gray-darker;
     }
   }
   small {
@@ -120,32 +114,6 @@ footer {
 
 /* sidebar */
 
-aside {
-  section.user_info {
-    margin-top: 20px;
-  }
-  section {
-    padding: 10px 0;
-    margin-top: 20px;
-    &:first-child {
-      border: 0;
-      padding-top: 0;
-    }
-    span {
-      display: block;
-      margin-bottom: 3px;
-      line-height: 1;
-    }
-    h1 {
-      font-size: 1.4em;
-      text-align: left;
-      letter-spacing: -1px;
-      margin-bottom: 3px;
-      margin-top: 0px;
-    }
-  }
-}
-
 .gravatar {
   float: left;
   margin-right: 10px;
@@ -157,10 +125,11 @@ aside {
 
 /* forms */
 
-input, textarea, select, .uneditable-input {
+//input はどうする？
+textarea, select, .uneditable-input {
   border: 1px solid #bbb;
   width: 100%;
-  margin-bottom: 15px;
+  // margin-bottom: 15px;
   @include box_sizing;
 }
 
@@ -177,9 +146,9 @@ input {
 }
 
 .field_with_errors {
-  @extend .has-error;
+  @extend .has-error !optional;
   .form-control {
-    color: $state-danger-text;
+    color: state-danger-text;
   }
 }
 
@@ -205,7 +174,7 @@ input {
   li {
     overflow: auto;
     padding: 10px 0;
-    border-bottom: 1px solid $gray-lighter;
+    border-bottom: 1px solid gray-lighter;
   }
 }
 
@@ -231,7 +200,7 @@ input {
     }
   }
   .timestamp {
-    color: $gray-light;
+    color: gray-light;
     display: block;
     margin-left: 60px;
   }
@@ -253,5 +222,24 @@ span.image {
   margin-top: 10px;
   input {
     border: 0;
+  }
+}
+
+// post
+
+.upvote, .downvote {
+  display: block;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #000;
+
+  &.active {
+    color: #ff0000;
+  }
+
+  &:hover {
+    color: #ff0000;
+    cursor: pointer;
   }
 }
