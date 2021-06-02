@@ -1,6 +1,6 @@
 server '35.72.242.29', user: 'qleg', roles: %w{app db web}
 
-set :ssh_options, keys: '~/.ssh/first_aws_rsa'
+set :ssh_options, keys: '~/.ssh/michigan-kuchikomi_key_rsa'
 
 # server-based syntax
 # ======================
