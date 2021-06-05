@@ -9,6 +9,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @community = Community.find(params[:community_id])
     @comment = Comment.new
   end
 

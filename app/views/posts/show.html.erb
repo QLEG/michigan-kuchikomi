@@ -1,24 +1,39 @@
-<div class="row">
-    <div class="col-1 text-center ">
-      <div id="vote-actions-<%= @post.id %>" class="vote" data-id="<%= @post.id %>">
-        <div class="fa fa-arrow-up upvote <%= is_upvoted @post %>"></div>
-        <span class="font-weight-bold score"><%= @post.score %></span>
-        <div class="fa fa-arrow-down downvote <%= is_downvoted @post %>"></div>
+<div class="row">    
+  <div class="col-8 bg-white">
+    <div class="row">
+      <div class="col-1 text-center ">
+        <div id="vote-actions-<%= @post.id %>" class="vote" data-id="<%= @post.id %>">
+          <div class="fa fa-arrow-up upvote <%= is_upvoted @post %>"></div>
+            <span class="font-weight-bold score"><%= @post.score %></span>
+            <div class="fa fa-arrow-down downvote <%= is_downvoted @post %>"></div>
+        </div>
+      </div>
+      <div class="col-11">
+        <p><small>Posted by <%= link_to @post.user.name, user_path(@post.user) %>・ <%= time_ago_in_words @post.created_at %> ago</small></p>
+        <h3><%= @post.title %></h3>
+        <%= simple_format @post.body %>
+        <h5>レスする</h5>
+        <%= form_for @comment, remote: true do |f| %>
+          <%= f.hidden_field :post_id, value: @post.id %>
+          <%= f.text_area :message, placeholder: "ログイン・登録してレスする", class: "form-controll"%>
+          <%= f.submit "Submit comment", class: "btn btn-success mt-3" %>
+        <% end %>
+        <div id="post-comments" class="mt-5">
+          <%= render partial: "posts/comments", locals: {comments: @post.comments } %>
+        </div>
       </div>
     </div>
-    <div class="col-11">
-      <h2><%= @post.title %></h2>
-    <%= simple_format @post.body %>
-
-    <div id="post-comments">
-      <%= render partial: "posts/comments", locals: {comments: @post.comments } %>
+  </div>
+  <div class="col-4">
+    <div class="card p-3 mb-3">
+      <p class="h5">About this community</p>
+      <%= render partial: 'communities/summary', locals: { community_id: @post.community_id } %>
     </div>
-
-    <h5>Leave a comment</h5>
-    <%= form_for @comment, remote: true do |f| %>
-      <%= f.hidden_field :post_id, value: @post.id %>
-      <%= f.text_area :message, placeholder: "Your comment goes here", class: "form-controll"%>
-      <%= f.submit "Submit comment", class: "btn btn-success mt-3" %>
-    <% end %>
+    <div class="card p-3 mb-3">
+      <h5><%= @community.name + "のルール" %></h5>
+      <small>
+      <%= simple_format @community.rules %>
+      </small>
+    </div>
   </div>
 </div>

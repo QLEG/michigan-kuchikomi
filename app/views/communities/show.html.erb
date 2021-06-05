@@ -1,7 +1,7 @@
 <div class="row mb-4">
     <h3><%= @community.name %></h3>
     <% if @is_subscribed %>
-      <%= link_to "Create New Post", new_community_post_path(@community), class: "btn btn-primary float-left ml-4" %>
+      <%= link_to "トピ作成/Create New Post", new_community_post_path(@community), class: "btn btn-primary float-left ml-4" %>
     <% else %>
       <%= render partial: "communities/subscribe", locals: { community_id: @community.id } %>
     <% end %>
@@ -13,8 +13,7 @@
   <div class="col-sm-4 ">
     <div class="card p-3 mb-3">
       <p class="h5">About this community</p>
-      <p class="mt-2"><%= @community.summary %></p>
-      <p><%= pluralize @subscriber_count, "member" %></p>
+      <%= render partial: 'communities/summary', locals: { community_id: @community.id } %>
     </div>
     <div class="card p-3 mb-3">
       <h5><%= @community.name + "のルール" %></h5>
