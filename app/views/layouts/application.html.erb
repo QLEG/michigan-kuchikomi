@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html>
   <%= render 'layouts/head' %>
-  <body>
+  <body style:padding-top:4.5rem;>
     <%= render 'layouts/header' %>
     <div class="container">
-    <% flash.each do |message_type, message| %>
-      <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
-    <% end %>
-    <section class="bg-light"> <%#淡い水色に変える？%>
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12 pt-4">
-            <%= yield %>
+      <% flash.each do |message_type, message| %>
+        <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+      <% end %>
+      <section class="bg-light"> <%#淡い水色に変える？%>
+        <div class="container ">
+          <div class="row ">
+            <div class="col-12 pt-4">
+              <%= yield %>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-    <%= render 'layouts/footer' %>
-    <%= debug(params) if Rails.env.development? %>
+      </section>
+      <%= render 'layouts/footer' %>
+      <%= debug(params) if Rails.env.development? %>
     </div>
   </body>
 </html>
