@@ -16,7 +16,7 @@
         <%= form_for @comment, remote: true do |f| %>
           <%= f.hidden_field :post_id, value: @post.id %>
           <%= f.text_area :message, placeholder: "ログイン・登録してレスする", class: "form-controll"%>
-          <%= f.submit "Submit comment", class: "btn btn-success mt-3" %>
+          <%= f.submit "Submit comment", class: "btn btn-success mt-2" %>
         <% end %>
         <div id="post-comments" class="mt-5">
           <%= render partial: "posts/comments", locals: {comments: @post.comments } %>
