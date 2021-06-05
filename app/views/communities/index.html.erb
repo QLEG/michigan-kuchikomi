@@ -4,13 +4,20 @@
 </div>
 <% end %>
 
+<div class="container">
+  <div class="row pl-3 pb-3">
+  <h3>コミュニティ一覧</h3>
+  </div>
+</div>
+<div class="container">
 <% if @communities.size > 0 %>
     <% @communities.each do |community| %>
-      <div class="card">
-        <h3><%= link_to community.name, community %></h3>
-        <%= simple_format community.rules %>
+      <div class="card pt-2 pl-3">
+        <h4><%= link_to community.name, community %></h4>
+        <%= simple_format community.summary %>
       </div>
     <% end %>
   <% else %>
   <p>No communities to display</p>
   <% end %>
+  </div>

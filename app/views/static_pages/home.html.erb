@@ -14,27 +14,79 @@
     </div>
   </div>
 <% else %>
-
-<div class="jumbotron ">
-  <h1>Welcome to Michigan Kuchikomi!</h1>
-  <h1>ミシガン口コミへようこそ!</h1>
-  <hr class="my-4">
-  <p>ミシガンでの生活をもっと楽しく便利にするためのオンラインコミュニティサイト</p>
-  <%# <h2>英語</h2> %>
-
-  <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
-</div>
+  <div class="jumbotron ">
+    <h1>Welcome to Michigan!</h1>
+    <h1>ミシガンへようこそ!</h1>
+    <hr class="my-4">
+    <p>ミシガンでの生活をもっと楽しく便利にするためのオンラインコミュニティサイト</p>
+    <%# <h2>英語</h2> %>
+    <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+  </div>
 <% end %>
 
-<%= link_to image_tag("worldometers-logo.gif", alt: "worldometers COVID-19 CORONAVIRUS PANDEMIC report", width: "200px"), "https://www.worldometers.info/coronavirus/" %>
-<p>COVID Live Update by Worldometer</p>
-<p>コロナウイルスの感染状況 世界全体・国ごとの統計</p>
+<div class="container mb-4">
+  <div class="row mb-1">
+    <div class="col-6">
+      <h4>ミシガン口コミ掲示板</h4>
+      <p>これはどこで買えるの？こんなときはどうすればいいの？など悩み事相談や愚痴などなんでもあり。</p>
+    </div>
+    <div class="col-6">
+      <h4>ガレージセール</h4>
+      <p>不要品や帰国時など売ります・買います情報、ガレージセールの案内など</p>
+      <p class="color">ページ準備中です お楽しみに！Coming soon!</p>
+    </div>
+  </div>
+  <div class="row mb-5">
+    <div class="col-6">
+      <%= link_to "Learn more", communities_path, class: "btn btn-outline-primary" %>
+    </div>
+    <div class="col-6">
+      <button type="button" class="btn btn-outline-primary" disabled>Coming soon!</button>
+    </div>
+  </div>
+  <div class="row mb-1">
+    <div class="col-6">
+      <h4>サークル、教室、イベント、ビジネス、求人、友達募集掲示板</h4>
+      <p>サークルメンバー募集、各種教室・習い事、イベント告示、ローカルビジネス、お友達募集など</p>
+      <p class="color">ページ準備中です お楽しみに</p>
+    </div>
+    <div class="col-6">
+      <h4>不動産掲示板</h4>
+      <p>賃貸、販売、ルームメイト募集、サブリース案内など</p>
+      <p class="color">ページ準備中です お楽しみに！</p>
+    </div>
+  </div>
+  <div class="row mb-5">
+    <div class="col-6">
+      <button type="button" class="btn btn-outline-primary" disabled>Coming soon!</button>
+    </div>
+    <div class="col-6">
+      <button type="button" class="btn btn-outline-primary" disabled>Coming soon!</button>
+    </div>
+  </div>
+</div>
 
-<%= link_to image_tag("toyokeizai-covid.png", alt: "oronavirus Disease (COVID-19) Situation Report in Japan by Toyo Keizai Online", width: "200px"), "https://toyokeizai.net/sp/visual/tko/covid19/en.html" %>
-<p>Coronavirus Disease (COVID-19) Situation Report in Japan by Toyo Keizai Online</p>
-<p>新型コロナウイルス日本国内感染の状況 (制作・運用：東洋経済オンライン)</p>
-
-<%= link_to image_tag("coronavirus-michigan.png", alt: "Coronavirus - Coronavirus - State of Michigan", width: "200px"), "https://www.michigan.gov/coronavirus/0,9753,7-406-98163_98173---,00.html" %>
-<p>Coronavirus - Coronavirus - State of Michigan</p>
-<p>新型コロナウイルスミシガン州内感染の状況 (運用：ミシガン州政府)</p>
+<div class="container">
+    <h4><コロナウイルス関連の情報サイトリンク></h4>
+  <div class="row mt-4">
+  <div class="col-4 pt-2 border border-primary">
+      <%= link_to image_tag("worldometers-logo.gif", alt: "worldometers COVID-19 CORONAVIRUS PANDEMIC report", width: "150px"), "https://www.worldometers.info/coronavirus/" %>
+      <a class="btn btn-outline-primary" href="https://www.worldometers.info/coronavirus/" role="button">最新情報を見る</a>
+    <p>COVID Live Update by Worldometer</p>
+    <p>コロナウイルスの感染状況 世界全体・国ごとの統計</p>
+  </div>
+  <div class="col-4 pt-2 border border-primary">
+      <%= link_to image_tag("toyokeizai-covid.png", alt: "oronavirus Disease (COVID-19) Situation Report in Japan by Toyo Keizai Online", width: "150px"), "https://toyokeizai.net/sp/visual/tko/covid19/en.html" %>
+      <a class="btn btn-outline-primary" href="https://toyokeizai.net/sp/visual/tko/covid19/en.html" role="button">最新情報を見る</a>
+    <p>Coronavirus Disease (COVID-19) Situation Report in Japan by Toyo Keizai Online</p>
+    <p>新型コロナウイルス日本国内感染の状況 (制作・運用：東洋経済オンライン)</p>
+  </div>
+  <div class="col-4 pt-2 border border-primary">
+      <%= link_to image_tag("coronavirus-michigan.png", alt: "Coronavirus - Coronavirus - State of Michigan", width: "150px"), "https://www.michigan.gov/coronavirus/0,9753,7-406-98163_98173---,00.html" %>
+      <a class="btn btn-outline-primary" href="https://www.michigan.gov/coronavirus/0,9753,7-406-98163_98173---,00.html" role="button">最新情報を見る</a>
+    <p>Coronavirus - Coronavirus - State of Michigan</p>
+    <p>新型コロナウイルスミシガン州内感染の状況 (運用：ミシガン州政府)</p>
+    </div>
+  </div>
+</div>
 
