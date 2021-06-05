@@ -96,6 +96,19 @@ footer {
   }
 }
 
+/* home.html.erb */
+
+.jumbotron {
+  color: #000000;
+  padding: 32;
+  background-image: url(michigan-mag.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  p {
+    color: #228bee;
+  }
+}
+
 /* miscellaneous */
 
 .debug_dump {
