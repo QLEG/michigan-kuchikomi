@@ -3,13 +3,16 @@
     <%= form_for [@community, @post] do |form| %>
       <div class="form-group">
         <%= label_tag :title %>
-        <%= form.text_field :title, class: 'form-control' %>
+        <%= form.text_field :title, placeholder: "タイトルを記入", class: 'form-control' %>
       </div>
       <div class="form-group">
         <%= label_tag :body %>
-        <%= form.text_area :body, class: 'form-control' %>
+        <%= form.text_area :body, placeholder: "内容を記入", class: 'form-control' %>
       </div>
-      <%= form.submit "Submit", class: "btn btn-primary" %>
+      <span class="image">
+      <%= form.file_field :image %>
+      </span><br>
+      <%= form.submit "トピックを投稿する", class: "btn btn-primary mt-3" %>
     <% end %>
   </div>
 </div>
