@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     resources :posts
   end
   resources :subscriptions
-  resources :comments, only: [:create]
+  resources :comments, only: [:create, :destroy]
   post "post/vote" => "votes#create"
   post '/login/guest_sign_in', to: 'sessions#new_guest'
 end

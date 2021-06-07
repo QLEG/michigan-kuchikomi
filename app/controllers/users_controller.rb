@@ -9,7 +9,10 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    redirect_to root_url and return unless @user.activated?
+    if @user.email == "guest@exapmle.com"
+      flash[:danger] = 'ゲストユーザーにはご利用いただけません'
+      redirect_to root_url
+    end
     @microposts = @user.microposts.paginate(page: params[:page])
     @posts = @user.posts
   end
@@ -32,6 +35,10 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    if @user.email == "guest@exapmle.com"
+      flash[:danger] = 'ゲストユーザーにはご利用いただけません'
+      redirect_to root_url
+    end
   end
 
   def update
