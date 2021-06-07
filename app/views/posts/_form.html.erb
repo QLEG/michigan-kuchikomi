@@ -10,7 +10,7 @@
         <%= form.text_area :body, placeholder: "内容を記入", class: 'form-control' %>
       </div>
       <span class="image">
-      <%= form.file_field :image %>
+      <%= form.file_field :images, multiple: true %>
       </span><br>
       <%= form.submit "トピックを投稿する", class: "btn btn-primary mt-3" %>
     <% end %>

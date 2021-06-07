@@ -12,6 +12,14 @@
         <p><small>Posted by <%= link_to @post.user.name, user_path(@post.user) %>・ <%= time_ago_in_words @post.created_at %> ago</small></p>
         <h3><%= @post.title %></h3>
         <%= simple_format @post.body %>
+        <p>
+          <strong>images:</strong>
+          <% if @post.images.attached? %>
+            <% @post.images.each do |image|%>
+              <%= image_tag image.variant(resize: "150x150") %>
+            <% end %>
+          <% end %>
+        </p>
         <% if logged_in? %>
           <h5>レスする</h5>
           <%= form_for @comment, remote: true do |f| %>
