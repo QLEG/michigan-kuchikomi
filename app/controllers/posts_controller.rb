@@ -20,9 +20,8 @@ class PostsController < ApplicationController
   
   def create
     @post = current_user.posts.build(post_params)
-    @post.user_id = current_user.id
     @post.community_id = params[:community_id]
-    @post.images.attach(params[:post][:images])
+    @post.image.attach(params[:post][:image])
     if @post.save
       redirect_to community_path(@post.community_id)
     else
@@ -34,7 +33,7 @@ class PostsController < ApplicationController
     private
 
     def post_params
-      params.require(:post).permit(:title, :body, images:[])
+      params.require(:post).permit(:title, :body, :image)
     end
 
     def set_post
