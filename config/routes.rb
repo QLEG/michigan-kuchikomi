@@ -20,4 +20,5 @@ Rails.application.routes.draw do
   resources :subscriptions
   resources :comments, only: [:create]
   post "post/vote" => "votes#create"
+  post '/login/guest_sign_in', to: 'sessions#new_guest'
 end
