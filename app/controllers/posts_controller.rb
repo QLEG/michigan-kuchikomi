@@ -22,7 +22,7 @@ class PostsController < ApplicationController
     @post = Post.new post_values
     @post.user_id = current_user.id
     @post.community_id = params[:community_id]
-    
+    @post.image.attach(params[:micropost][:image])
     if @post.save
       redirect_to community_path(@post.community_id)
     else

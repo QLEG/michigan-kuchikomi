@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
     end
   end
 
-  def destroy #reset_session でもOK?　　
+  def destroy #reset_session でもOK?
     log_out
     redirect_to root_url, notice: 'You are logged out! See you soon!'
   end
