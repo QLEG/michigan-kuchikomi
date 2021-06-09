@@ -13,9 +13,15 @@
             <%= link_to "Help",   help_path, class: "btn btn-outline-primary" %>
           </li>
           <% if logged_in? %>
+<%
+=begin
+%> 
           <li class="nav-item">
             <%= link_to "Users", users_path, class: "btn btn-outline-primary" %>
           </li>
+<%
+=end 
+%>
           <div class="float-right">
           <div class="dropdown show float-right">
             <button id="dropdown1" class="btn btn-outline-primary dropdown-toggle"   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -33,7 +39,7 @@
               <%= current_user.karma %>
             </div>
           <% else %>
-          <%= link_to "Log in / Sign up", login_path, class: "btn btn-outline-primary" %>
+          <%= link_to "ログイン / 登録", login_path, class: "btn btn-outline-primary" %>
           <% end %>
           </div>
         </div>
