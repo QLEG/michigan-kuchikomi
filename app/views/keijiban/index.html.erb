@@ -26,8 +26,13 @@
 =end
 %>
 <div class="row">
-  <div class="col">
-  <p class="btn btn-outline-primary disabled h4">人気トピ</p>
+  <div class="col-8">
+    <p class="btn btn-outline-primary disabled h4">人気トピ</p>
+    <% if logged_in?%>
+      <%= link_to "トピ作成", communities_path, class:"btn btn-primary float-right h4" %>
+    <% else %>
+      <%= link_to "ログインしてトピ作成", login_path, class:"btn btn-primary float-right h4" %>
+    <% end %>
   </div>
 </div>
 <div class="row">
