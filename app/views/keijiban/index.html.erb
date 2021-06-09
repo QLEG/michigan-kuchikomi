@@ -27,7 +27,7 @@
 %>
 <div class="row">
   <div class="col">
-  <p class="btn btn-outline-primary h4">人気トピ</p>
+  <p class="btn btn-outline-primary disabled h4">人気トピ</p>
   </div>
 </div>
 <div class="row">
@@ -35,7 +35,7 @@
     <%= render partial: "posts/list", locals: { posts: @posts } %>
   </div>
   <div class="col-4">
-    <p class="h5 mb-4">Up and coming Communities</p>
+    <p class="h5 mb-3">新しいコミュニティ</p>
 
     <div class="card">
       <ul class="list-group list-group-flush">
@@ -45,6 +45,6 @@
       </ul>
     </div>
 
-    <%= link_to "view all", communities_path,  class: "btn btn-primary mt-3" %>
+    <%= link_to "すべてのコミュニティを見る", communities_path,  class: "btn btn-primary mt-2" %>
   </div>
 </div>
