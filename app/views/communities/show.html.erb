@@ -1,7 +1,7 @@
 <div class="row mb-4">
     <h3><%= @community.name %></h3>
     <% if @is_subscribed %>
-      <%= link_to "トピ作成/Create New Post", new_community_post_path(@community), class: "btn btn-primary float-left ml-4" %>
+      <%= link_to "トピ作成/Create New Post", new_community_post_path(@community), class: "btn btn-primary ml-5 float-right" %>
     <% else %>
       <%= render partial: "communities/subscribe", locals: { community_id: @community.id } %>
     <% end %>
