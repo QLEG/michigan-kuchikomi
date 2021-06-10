@@ -5,23 +5,23 @@
   <div class="col-md-5 col-md-offset-3">
     <%= form_with(url: login_path, scope: :session, local: true) do |f| %>
 
-      <%= f.label :email %>
+      <%= f.label :Eメール, class:"mt-2" %>
       <%= f.email_field :email, class: 'form-control' %>
 
-      <%= f.label :password %>
-      <%= link_to "(forgot password)", new_password_reset_path %>
+      <%= f.label :パスワード, class:"mt-3" %>
+      <%= link_to "(パスワードを忘れた方)", new_password_reset_path %>
       <%= f.password_field :password, class: 'form-control' %>
 
       <%= f.label :remember_me, class: "checkbox inline mt-2" do %>
         <%= f.check_box :remember_me %>
-        <span>Remember me on this computer</span>
+        <span>ログインしたままにする</span>
       <% end %>
 
-      <%= f.submit "Log in", class: "btn btn-primary btn-block mt-2" %>
+      <%= f.submit "ログイン", class: "btn btn-primary btn-block mt-2" %>
     <% end %>
 
     <%= link_to "ゲストログイン(お試し用)", login_guest_sign_in_path, class: "btn btn-primary btn-block mt-2", method: :post %>
-    <p class="mt-3">New user? <%= link_to "Sign up now!", signup_path %></p>
+    <p class="mt-3">はじめての方はこちら→ <%= link_to "新規ユーザー登録", signup_path, class:"btn btn-sm btn-outline-primary" %></p>
 
   </div>
 </div>
