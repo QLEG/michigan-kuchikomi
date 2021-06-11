@@ -23,7 +23,7 @@ class SessionsController < ApplicationController
 
   def destroy #reset_session でもOK?
     log_out
-    redirect_to root_url, notice: 'You are logged out! See you soon!'
+    redirect_to root_url, notice: 'ログアウトされました！'
   end
 
   def new_guest
