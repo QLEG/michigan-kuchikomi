@@ -110,6 +110,35 @@ footer {
   }
 }
 
+/* help.html.erb */
+.faq-list-item {
+  margin:10px;
+  border-bottom:1px solid #ccc;
+  position:relative;
+  cursor:pointer;
+  text-align: left;
+}
+
+.faq-list-item h3 {
+  font-size: 16px;
+}
+
+.faq-list-item span {
+  position:absolute;
+  top:0;
+  right:5px;
+  color:#ccc;
+  font-size:13px;
+}
+
+.answer {
+  font-size: 16px;
+  padding: 5px 0px;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  display: none;
+}
+
 /* miscellaneous */
 
 .debug_dump {
