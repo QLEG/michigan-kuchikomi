@@ -19,7 +19,7 @@
           <h5>このトピにコメントする</h5>
           <%= form_for @comment, remote: true do |f| %>
             <%= f.hidden_field :post_id, value: @post.id %>
-            <%= f.text_area :message, placeholder: "コメントを書く", class: "form-controll"%>
+            <%= f.text_area :message, size: "20x7", placeholder: "コメントを書く", class: "form-controll"%>
             <%= f.submit "コメントする", class: "btn btn-success mt-2" %>
           <% end %>
         <% else %>
