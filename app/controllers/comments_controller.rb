@@ -10,6 +10,7 @@ class CommentsController < ApplicationController
         if @comment.save
           @comments = Comment.where(post_id: @comment.post_id)
           render "comments/create"
+          flash[:notice] = "コメントを投稿しました！"
         else
           #unable to save
         end

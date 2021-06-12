@@ -1,3 +1,4 @@
 console.log("comment created...");
 
 $("#post-comments").html("<%= escape_javascript(render partial: 'posts/comments', locals: {comments: @comments }) %> ");
+$("textarea").val('');
