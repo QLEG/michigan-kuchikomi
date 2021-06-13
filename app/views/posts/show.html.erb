@@ -19,14 +19,14 @@
           <h5>このトピにコメントする</h5>
           <%= form_for @comment, remote: true do |f| %>
             <%= f.hidden_field :post_id, value: @post.id %>
-            <%= f.text_area :message, size: "20x7", placeholder: "コメントを書く", class: "form-controll"%>
+            <%= f.text_area :message, size: "20x6", placeholder: "コメントを書く", class: "form-controll"%>
             <%= f.submit "コメントする", class: "btn btn-success mt-2" %>
           <% end %>
         <% else %>
           <%= link_to "ログイン・サインアップしてコメントする", login_path, class: "btn btn-success mb-2" %>
           <P><small>※アカウントを作成すると毎回の投稿者情報等の入力を省くことができます。<br>※そのほか、ミシガン口コミを快適に使うための便利な機能が無料でご利用いただけます。</small></P>
         <% end %>
-        <div id="post-comments" class="mt-5">
+        <div id="post-comments" class="mt-4">
           <%= render partial: "posts/comments", locals: {comments: @post.comments } %>
         </div>
       </div>

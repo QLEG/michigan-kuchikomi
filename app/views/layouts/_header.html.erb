@@ -32,10 +32,10 @@
                 <%= current_user.name %>
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <%= link_to "Profile", current_user, class: "dropdown-item" %>
-                <%= link_to "Settings", edit_user_path(current_user), class: "dropdown-item" %>
+                <%= link_to "プロフィール", current_user, class: "dropdown-item" %>
+                <%= link_to "アカウント設定", edit_user_path(current_user), class: "dropdown-item" %>
                 <div class="dropdown-divider"></div>
-                <%= link_to "Log out", logout_path, method: :delete, class: "dropdown-item" %>
+                <%= link_to "ログアウトする", logout_path, method: :delete, class: "dropdown-item" %>
               </div> 
             </div>
             <% else %>
