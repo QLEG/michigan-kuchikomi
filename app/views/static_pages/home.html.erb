@@ -51,43 +51,27 @@
 
 
 <div class="container mb-4 ">
-  <div class="row mb-1 ">
-    <div class="col-12 col-md-6">
-      <h4>おしゃべり掲示板</h4>
-      <p>これはどこで買えるの？こんなときはどうすればいいの？など悩み事相談等なんでもあり。</p>
+  <div class="row mb-5">
+    <div class="col-md-6 col-xs-12">
+      <h4><%= link_to "おしゃべり掲示板", keijiban_path, class: ""%></h4>
+      <p>これはどこで買えるの？こんなときはどうすればいいの？など悩み事相談等</p>
     </div>
-    <div class="col-12 col-md-6">
+    <div class="col-md-6 col-xs-12">
       <h4>ガレージセール掲示板</h4>
       <p>不要品や帰国時など売ります・買います情報、ガレージセールの案内など</p>
-      <p class="color">ページ準備中です お楽しみに！</p>
+      <i>ページ準備中です お楽しみに！</i>
     </div>
   </div>
-  <div class="row mb-5">
-    <div class="col-12 col-md-6">
-      <%= link_to "Learn more", keijiban_path, class: "btn btn-outline-primary" %>
-    </div>
-    <div class="col-12 col-md-6">
-      <button type="button" class="btn btn-outline-primary" disabled>Coming soon!</button>
-    </div>
-  </div>
-  <div class="row mb-1">
-    <div class="col-12 col-md-6">
+  <div class="row mt-5 mb-1">
+    <div class="col-md-6 col-xs-12">
       <h4>宣伝・募集掲示板</h4>
       <p>サークルメンバー募集、各種教室・レッスン、イベント告示、ローカルビジネス、お友達募集など</p>
-      <p class="color">ページ準備中です お楽しみに</p>
+      <i>ページ準備中です お楽しみに！</i>
     </div>
-    <div class="col-12 col-md-6">
+    <div class="col-md-6 col-xs-12">
       <h4>不動産掲示板</h4>
       <p>賃貸、販売、ルームメイト募集、サブリース案内など</p>
-      <p class="color">ページ準備中です お楽しみに！</p>
-    </div>
-  </div>
-  <div class="row mb-5">
-    <div class="col-6">
-      <button type="button" class="btn btn-outline-primary" disabled>Coming soon!</button>
-    </div>
-    <div class="col-6">
-      <button type="button" class="btn btn-outline-primary" disabled>Coming soon!</button>
+      <i>ページ準備中です お楽しみに！</i>
     </div>
   </div>
 </div>
@@ -95,23 +79,23 @@
 <div class="container">
     <h4><コロナウイルス関連の情報サイトリンク></h4>
   <div class="row mt-4">
-  <div class="col-4 pt-2 border border-primary">
+  <div class="col-md-4 col-xs-12 pt-2 border">
       <%= link_to image_tag("worldometers-logo.gif", alt: "worldometers COVID-19 CORONAVIRUS PANDEMIC report", width: "150px"), "https://www.worldometers.info/coronavirus/" %>
       <a class="btn btn-outline-primary" href="https://www.worldometers.info/coronavirus/" role="button">最新情報を見る</a>
-    <p>COVID Live Update by Worldometer</p>
-    <p>コロナウイルスの感染状況 世界全体・国ごとの統計</p>
+      <p><small>COVID Live Update by Worldometer</small></p>
+      <p><small>新型コロナウイルスの感染状況 世界全体・国ごとの統計</small></p>
   </div>
-  <div class="col-4 pt-2 border border-primary">
+  <div class="col-md-4 col-xs-12 pt-2 border">
       <%= link_to image_tag("toyokeizai-covid.png", alt: "oronavirus Disease (COVID-19) Situation Report in Japan by Toyo Keizai Online", width: "150px"), "https://toyokeizai.net/sp/visual/tko/covid19/en.html" %>
       <a class="btn btn-outline-primary" href="https://toyokeizai.net/sp/visual/tko/covid19/en.html" role="button">最新情報を見る</a>
-    <p>Coronavirus Disease (COVID-19) Situation Report in Japan by Toyo Keizai Online</p>
-    <p>新型コロナウイルス日本国内感染の状況 (制作・運用：東洋経済オンライン)</p>
+    <p><small>COVID-19 Situation Report in Japan by Toyo Keizai Online</small></p>
+    <p><small>新型コロナウイルス日本国内感染の状況 (制作・運用：東洋経済オンライン)</small></p>
   </div>
-  <div class="col-4 pt-2 border border-primary">
+  <div class="col-md-4 col-xs-12 pt-2 border">
       <%= link_to image_tag("coronavirus-michigan.png", alt: "Coronavirus - Coronavirus - State of Michigan", width: "150px"), "https://www.michigan.gov/coronavirus/0,9753,7-406-98163_98173---,00.html" %>
       <a class="btn btn-outline-primary" href="https://www.michigan.gov/coronavirus/0,9753,7-406-98163_98173---,00.html" role="button">最新情報を見る</a>
-    <p>Coronavirus - Coronavirus - State of Michigan</p>
-    <p>新型コロナウイルスミシガン州内感染の状況 (運用：ミシガン州政府)</p>
+    <p><small>Coronavirus - Coronavirus - State of Michigan</small></p>
+    <p><small>新型コロナウイルスミシガン州内感染の状況 (運用：ミシガン州政府)</small></p>
     </div>
   </div>
 </div>
