@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     if @user.email == "guest@exapmle.com"
-      flash[:danger] = 'ゲストユーザーにはご利用いただけません'
+      flash[:danger] = 'ゲストユーザー関連の機能には制限がかけられています'
       redirect_to root_url
     end
     @microposts = @user.microposts.paginate(page: params[:page])
@@ -36,7 +36,7 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
     if @user.email == "guest@exapmle.com"
-      flash[:danger] = 'ゲストユーザーにはご利用いただけません'
+      flash[:danger] = 'ゲストユーザー関連の機能には制限がかけられています'
       redirect_to root_url
     end
   end
