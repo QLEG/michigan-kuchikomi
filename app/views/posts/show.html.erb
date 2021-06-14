@@ -1,5 +1,5 @@
 <div class="row">    
-  <div class="col-8 bg-light">
+  <div class="col-md-8 col-xs-12 bg-light">
     <div class="row">
       <div class="col-1 text-center ">
         <div id="vote-actions-<%= @post.id %>" class="vote" data-id="<%= @post.id %>">
@@ -32,7 +32,7 @@
       </div>
     </div>
   </div>
-  <div class="col-4">
+  <div class="col-md-4 col-xs-12">
     <div class="card p-3 mb-3">
       <p class="h5">このコミュニティについて</p>
       <%= render partial: 'communities/summary', locals: { community_id: @post.community_id } %>
