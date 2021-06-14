@@ -11,6 +11,23 @@
 
 /* universal */
 
+@media screen and (max-width: 576px) {
+  /*スマホの場合*/
+  .mb {
+    display:none!important;
+   }
+  .container{
+    padding:0;
+  }
+  div[class^="col-"] {
+    padding:0;
+  }
+  .row {
+    margin:0;
+  }
+}
+  
+
 body {
   padding-top: 64px;
   background-color: #DDDDDD;
@@ -152,6 +169,10 @@ footer {
   margin-top: 45px;
   // @include box_sizing;
 }
+
+/* /keijiban/index */
+
+
 
 /* sidebar */
 
