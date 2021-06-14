@@ -40,11 +40,11 @@
     <%= render partial: "posts/list", locals: { posts: @posts } %>
   </div>
   <div class="col-4">
-    <p class="h5 mb-3">新しいコミュニティ</p>
     <div class="card">
+    <h5 class="card-header text-dark">新しいコミュニティ</h5>
       <ul class="list-group list-group-flush">
         <% @communities.each do |community| %>
-        <li class="list-group-item bg-light"><%= link_to community.name, community_path(community) %></li>
+        <li class="list-group-item  "><%= link_to community.name, community_path(community) %></li>
         <% end %>
       </ul>
     </div>
