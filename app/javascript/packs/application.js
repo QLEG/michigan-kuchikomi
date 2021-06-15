@@ -12,7 +12,6 @@ require("jquery")
 require("bootstrap")
 require("../includes/vote.js")
 require("../includes/application.js")
-require("../../assets/stylesheets")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
