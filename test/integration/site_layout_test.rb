@@ -17,7 +17,7 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
     @user       = users(:qleg)
   end
   
-  test "layout links when logged in" do
+  # test "layout links when logged in" do
   #   log_in_as(@user)
   #   get root_path
   #   # assert_template 'static_pages/home'
