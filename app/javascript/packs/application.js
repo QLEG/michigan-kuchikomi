@@ -10,10 +10,8 @@ require("channels")
 require("popper.js")
 require("jquery")
 require("bootstrap")
-// require("bootstrap-sprockets")
 require("../includes/vote.js")
 require("../includes/application.js")
-
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
