@@ -5,7 +5,7 @@
 </div>
 <div class="row">
   <div class="col-md-6 text-right">
-  <%= image_tag @good.image if @good.image.attached? %>
+  <%= image_tag @good.image.variant(resize: "300x300") if @good.image.attached? %>
   </div>
 
   <div class="col-md-6">
