@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :goods, dependent: :destroy
   has_many :votes
   has_many :comments
   has_many :posts

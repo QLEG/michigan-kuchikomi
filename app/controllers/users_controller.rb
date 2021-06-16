@@ -13,8 +13,9 @@ class UsersController < ApplicationController
       flash[:danger] = 'ゲストユーザー関連の機能には制限がかけられています'
       redirect_to root_url
     end
-    @microposts = @user.microposts.paginate(page: params[:page])
+    # @microposts = @user.microposts.paginate(page: params[:page])
     @posts = @user.posts
+    @goods = @user.goods.paginate(page: params[:page])
   end
 
   def new

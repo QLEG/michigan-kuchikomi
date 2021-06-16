@@ -1,8 +1,13 @@
 <% provide(:title, @user.name) %>
 <div class="row">
-  <div class="col-sm-8">
-    <h5>過去にコメントしたポスト (<%= @user.comments.count %>)</h5>
-    <%= render partial: "posts/list", locals: {posts: @posts } %>
+<div class="col-md-8">
+    <% if @user.goods.any? %>
+      <h3>売出し中の商品 (<%= @user.goods.count %>)</h3>
+      <ol class="goods">
+        <%= render @goods %>
+      </ol>
+      <%= will_paginate @goods %>
+    <% end %>
   </div>
   <div class="col-sm-4">
       <%= gravatar_for @user %>
@@ -11,6 +16,12 @@
 
       <p>Karma: <%= @user.karma %> <span class="fa fa-star text-warning"></span></p>
       <p>Cake day: <%= @user.created_at.strftime("%m/%d/%Y") %></p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-8 col-xs-12">
+    <h5>過去にコメントしたポスト (<%= @user.comments.count %>)</h5>
+    <%= render partial: "posts/list", locals: {posts: @posts } %>
   </div>
 </div>
 <%
