@@ -1,0 +1,46 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: "花柄シュシュ(ブルー×ブラック) ハンドメイド"
+  goods_condition: "新品、未使用"
+  delivery_condition: "ピックアップ"
+  area: "Farmington Hills"
+  description: "花柄シュシュ(ブルー×ブラック) 直径約10cm。厚めのしっかりした生地です。ハンドメイド品です。丁寧に仕上げてはおりますが、プロではない為、多少縫い目が荒い部分もあります。しっかりご理解頂いた上で購入お願い致します！即時購入大歓迎です。"
+  price: "3"
+  size: "ワンサイズ"
+  created_at: <%= 10.minutes.ago %>
+  user: qleg
+
+two:
+  name: "【値下げ】古着 チェックブルゾン"
+  goods_condition: "傷や汚れあり"
+  delivery_condition: "ピックアップ"
+  area: "Farmington Hills"
+  description: "日本の下北沢の古着屋で購入しました。オーバーサイズでドルマンスリーブ、独特なチェック、フェイスレザーの切り替えが特徴的なブルゾンです。襟の内側に破れと、左ポケットの内側が破けていますのでご了承下さい。普段着ている分には見えずそこまで気にならないかと。"
+  price: "25"
+  size: "メンズ L"
+  created_at: <%= 3.years.ago %>
+  user: qleg
+
+three:
+  name: "Samantha Thavasa サマンサタバサ　2way バッグ"
+  goods_condition: "目立った傷や汚れなし"
+  delivery_condition: "ピックアップ"
+  area: "Novi"
+  description: "Samantha Thavasa サマンサタバサ  2way バッグです。定価4万円前後だったと記憶しております。◆上品で高級感溢れるデザインが魅力の人気モデル「アゼル」です。中央の南京錠がポイントです。お出かけにもデイリーユースにもぴったりのサイズ感なので大活躍してくれる事間違いなしです！"
+  price: "100"
+  size: "横25-31  高さ20  マチ12cm"
+  created_at: <%= 2.hours.ago %>
+  user: qleg
+
+most_recent:
+  name: "【良品★男女兼用★】ヴィヴィアンウエストウッド 黒 レザー ラウンドジップ 財布"
+  goods_condition: "新品、未使用"
+  delivery_condition: "ピックアップ"
+  area: "Farmington Hills"
+  description: "ゴールドオーブ、ラウンジジップスタイルの長財布。収納力が高く180度開閉するファスナー、ジップコインケースは大きく開き、カードホルダー・マチ付きの札入れなど機能性にこだわりながらも洗練されたデザインです。ユニセックスでお使いいただけます。 "
+  price: "50"
+  size: "横20.0 × 縦10.0cm × 幅2.5cm "
+  created_at: <%= Time.zone.now %>
+  user: qleg
+

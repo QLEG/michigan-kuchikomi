@@ -83,4 +83,12 @@ class UserTest < ActiveSupport::TestCase
       @user.destroy
     end
   end
+
+  test "associated goods should be destroyed" do
+    @user.save
+    @user.goods.create!(name: "レディース 幅広スポーティスニーカー", user_id: @user.id, goods_condition:"新品", delivery_condition:"ピックアップ", area:"Novi", price:"20", size: "23.5cm", description:"流行りのデザインで通学、体育館シューズ、仕事履きにオススメ☆滑り止め付きで靴底も厚いのでランニングシューズ、ウォーキングシューズ、運動靴としてもお使いいただけると思います。アディダス ナイキ などのスポーツメーカーに見劣りしないデザイン性の高いスニーカーでオススメです♪")
+    assert_difference 'Good.count', -1 do
+      @user.destroy
+    end
+  end
 end

@@ -21,4 +21,5 @@ Rails.application.routes.draw do
   resources :comments, only: [:create, :destroy]
   post "post/vote" => "votes#create"
   post '/login/guest_sign_in', to: 'sessions#new_guest'
+  resources :goods
 end
