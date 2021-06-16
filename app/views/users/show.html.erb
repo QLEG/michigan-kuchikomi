@@ -1,13 +1,8 @@
 <% provide(:title, @user.name) %>
 <div class="row">
-<div class="col-md-8">
-    <% if @user.goods.any? %>
-      <h3>売出し中の商品 (<%= @user.goods.count %>)</h3>
-      <ol class="goods">
-        <%= render @goods %>
-      </ol>
-      <%= will_paginate @goods %>
-    <% end %>
+  <div class="col-md-8 col-xs-12">
+    <h5>過去にコメントしたポスト (<%= @user.comments.count %>)</h5>
+    <%= render partial: "posts/list", locals: {posts: @posts } %>
   </div>
   <div class="col-sm-4">
       <%= gravatar_for @user %>
@@ -19,23 +14,4 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-md-8 col-xs-12">
-    <h5>過去にコメントしたポスト (<%= @user.comments.count %>)</h5>
-    <%= render partial: "posts/list", locals: {posts: @posts } %>
-  </div>
 </div>
-<%
-=begin
-%> 
-<div class="col-sm-8">
-  <% if @user.microposts.any? %>
-    <h3>Microposts (<%= @user.microposts.count %>)</h3>
-    <ol class="microposts">
-      <%= render @microposts %>
-    </ol>
-    <%= will_paginate @microposts %>
-  <% end %>
-</div>
-<%
-=end
-%>

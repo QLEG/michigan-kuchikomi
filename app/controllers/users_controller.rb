@@ -13,7 +13,6 @@ class UsersController < ApplicationController
       flash[:danger] = 'ゲストユーザー関連の機能には制限がかけられています'
       redirect_to root_url
     end
-    # @microposts = @user.microposts.paginate(page: params[:page])
     @posts = @user.posts
     @goods = @user.goods.paginate(page: params[:page])
   end
@@ -65,13 +64,11 @@ class UsersController < ApplicationController
                                   :password_confirmation)
     end
 
-    # 正しいユーザーかどうか確認
     def correct_user
       @user = User.find(params[:id])
       redirect_to(root_url) unless current_user?(@user)
     end
 
-    # 管理者かどうか確認
     def admin_user
       redirect_to(root_url) unless current_user.admin?
     end
