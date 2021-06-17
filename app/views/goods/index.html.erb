@@ -13,7 +13,7 @@
     <div class="col-md-3">
       <div class="card-deck mb-3">
         <div class="card">
-          <%= image_tag good.image if good.image.attached? %> 
+          <%= image_tag good.image, class:"card-img-top" if good.image.attached? %> 
           <div class="card-body text-center">
             <h5 class="card-title"><span class="name pl-2"><%= link_to good.name, good_path(good.id)%></span></h5>
             <p class="card-text"><span class="price pl-2">$ <%= good.price%></p>
