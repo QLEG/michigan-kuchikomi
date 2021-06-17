@@ -37,12 +37,12 @@
   </div>
 </div>
 <div class="row text-center">
-  <div class="col-md-12 mt-5 ">
-    <h2>$ <%= @good.price %></h2>
-      <span class="description">商品の説明・詳細<%= @good.description %></span>
+  <div class="col-md-12 mt-5">
+    <h2 class="mb-3">$ <%= @good.price %></h2>
+    <span class="description">商品の説明・詳細<%= simple_format(@good.description) %></span>
   </div>
 </div>
-<div class="row ">
+<div class="row">
 <div class="col-md-12 text-right">
   <span class="timestamp">
     <small><%= time_ago_in_words(@good.created_at) %> 前に投稿されました。</small>
