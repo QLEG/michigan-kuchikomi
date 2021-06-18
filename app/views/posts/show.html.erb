@@ -10,7 +10,14 @@
       </div>
       <div class="col-11">
         <p><small>Posted by <%= link_to @post.user.name, user_path(@post.user) %>・ <%= time_ago_in_words @post.created_at %> ago</small></p>
-        <h3><%= @post.title %></h3>
+          <h3><%= @post.title %></h3>
+          <div class="float-right">
+          <% if current_user.admin?%>
+        | <%= link_to "ポストを削除する", community_post_path, method: :delete,
+                                      data: { confirm: "削除してもよろしいですか?" } %>
+          <% end %>
+          </div>
+        
         <%= simple_format @post.body %>
         <p>
           <%= image_tag @post.image.variant(resize: "400x400") if @post.image.attached? %>
@@ -24,7 +31,7 @@
           <% end %>
         <% else %>
           <%= link_to "ログイン・サインアップしてコメントする", login_path, class: "btn btn-success mb-2" %>
-          <P><small>※アカウントを作成すると毎回の投稿者情報等の入力を省くことができます。<br>※そのほか、ミシガン口コミを快適に使うための便利な機能が無料でご利用いただけます。</small></P>
+          <P><small>※アカウントを作成すると毎回の投稿者情報等の入力を省くことができます。<br>※そのほかNewミシガン掲示板を快適に使うための便利な機能が無料でご利用いただけます。</small></P>
         <% end %>
         <div id="post-comments" class="mt-4">
           <%= render partial: "posts/comments", locals: {comments: @post.comments } %>

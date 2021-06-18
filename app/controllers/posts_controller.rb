@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   # before_action :logged_in_user, only: [ :new, :create ]
   before_action :set_post, only: [:show]
   before_action :authorized_subscriber, only: [:new]
+  before_action :admin_user, only: :destroy
 
   def index
     @posts = Post.all
@@ -28,6 +29,13 @@ class PostsController < ApplicationController
       @community = Community.find(params[:community_id])
       render :new
     end
+    
+  end
+
+  def destroy
+    Post.find(params[:id]).destroy
+    flash[:success] = "ポストが削除されました"
+    redirect_to keijiban_url
   end
 
     private
@@ -48,6 +56,10 @@ class PostsController < ApplicationController
 
     def post_values
       params.require(:post).permit(:title, :body)
+    end
+
+    def admin_user
+      redirect_to(root_url) unless current_user.admin?
     end
 
 end
