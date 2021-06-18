@@ -26,6 +26,12 @@ class GoodsController < ApplicationController
     end
   end
 
+  def destroy
+    Good.find(params[:id]).destroy
+    flash[:success] = "商品はは削除されました"
+    redirect_to goods_url
+  end
+
   private
 
     def good_params

@@ -49,7 +49,7 @@ class GoodTest < ActiveSupport::TestCase
   end
 
   test "description should be at most 300 characters" do
-    @good.description = "a" * 301
+    @good.description = "a" * 501
     assert_not @good.valid?
   end
 

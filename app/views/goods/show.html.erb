@@ -9,7 +9,7 @@
   </div>
 
   <div class="col-md-6">
-    <table border="1">
+    <table border="1" class="mb-3">
     <tr>
       <td class="bg-gray pl-2">出品者</td>
       <td><span class="user pl-2 pr-2"><%= link_to @good.user.name, @good.user %></span></td>
@@ -34,6 +34,10 @@
     </tr>
 
     </table>
+    <% if current_user?(@good.user) %>
+      <%= link_to "商品を削除する", @good, class:"btn btn-primary", method: :delete,
+                                       data: { confirm: "削除されると元に戻せませんがよろしいですか？" } %>
+    <% end %>
   </div>
 </div>
 <div class="row text-center">

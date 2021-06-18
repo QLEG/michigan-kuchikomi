@@ -10,6 +10,6 @@ class Good < ApplicationRecord
   validates :size, presence: true
   validates :name, presence: true
 
-  validates :description, presence: true, length: { maximum: 300 }
+  validates :description, presence: true, length: { maximum: 500 }
   has_one_attached :image
 end
