@@ -28,7 +28,7 @@ class GoodsController < ApplicationController
 
   def destroy
     Good.find(params[:id]).destroy
-    flash[:success] = "商品はは削除されました"
+    flash[:success] = "商品は削除されました"
     redirect_to goods_url
   end
 
