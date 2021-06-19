@@ -12,7 +12,7 @@
         <p><small>Posted by <%= link_to @post.user.name, user_path(@post.user) %>・ <%= time_ago_in_words @post.created_at %> ago</small></p>
           <h3><%= @post.title %></h3>
           <div class="float-right">
-          <% if current_user.admin?%>
+          <% if current_user != nil && current_user.admin?%>
         | <%= link_to "ポストを削除する", community_post_path, method: :delete,
                                       data: { confirm: "削除してもよろしいですか?" } %>
           <% end %>
