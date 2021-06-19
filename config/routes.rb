@@ -22,4 +22,5 @@ Rails.application.routes.draw do
   post "post/vote" => "votes#create"
   post '/login/guest_sign_in', to: 'sessions#new_guest'
   resources :goods
+  get 'search' => 'posts#search'
 end

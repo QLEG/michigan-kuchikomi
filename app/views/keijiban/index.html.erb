@@ -27,7 +27,11 @@
 %>
 <div class="row">
   <div class="col-8">
-    <p class="btn btn-outline-primary disabled h4 mb">人気トピ</p>
+    <span class="btn btn-outline-primary disabled h4 mb">人気トピ</span>
+    <%= form_tag(search_path,:method => 'get', class: "ml-3", style: "display: inline-block;") do %>
+      <%= text_field_tag :search %>
+      <%= submit_tag '検索', :name => nil %>
+    <% end %>
     <% if logged_in?%>
       <%= link_to "トピ作成", communities_path, class:"btn btn-primary float-right h4" %>
     <% else %>

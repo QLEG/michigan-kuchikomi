@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     if @user.email == "guest@exapmle.com"
-      flash[:danger] = 'ゲストユーザー関連の機能には制限がかけられています'
+      flash[:danger] = 'ゲストユーザー関連の機能は制限されています'
       redirect_to root_url
     end
     @posts = @user.posts
