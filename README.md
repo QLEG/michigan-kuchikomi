@@ -61,12 +61,14 @@ BIC/Asagao http://www.asagao.com/bic/index.html
 * アカウント有効化認証
 * ユーザー情報編集
 * パスワード再設定
-* ゲストユーザーログイン
+* ゲストログイン
 * トピック投稿
+* 検索機能
 * 投稿一覧
 * 投稿詳細
 * コメント投稿
-* トピックへのいいね付与
+* トピックへのいいね付与(Ajax)
+* レスポンシブ対応
 
 </br>
 
@@ -95,6 +97,9 @@ BIC/Asagao http://www.asagao.com/bic/index.html
   * Heroku
   * AWS/S3 (画像のアップロード・保存)
 
+* テスト
+  * minitest
+
 * CI/CD
   * Travis CI
 
@@ -103,7 +108,7 @@ BIC/Asagao http://www.asagao.com/bic/index.html
 
 * 開発環境
   * VScode
-  * Docker
+  * Docker/Docker-Compose
 
 </br>
 
