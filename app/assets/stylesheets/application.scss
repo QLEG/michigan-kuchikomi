@@ -311,6 +311,9 @@ span.image {
 }
 
 .card-img-overlay{
+  position: absolute;
+  margin: 0;
+  padding: 0;
   .card-title {
     padding-left: 1rem;
     padding-right: 0.5rem;
