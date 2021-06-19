@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :logged_in_user, except: [ :index, :show ]
+  before_action :logged_in_user, except: [ :index, :show, :search ]
   # before_action :logged_in_user, only: [ :new, :create ]
   before_action :set_post, only: [:show]
   before_action :authorized_subscriber, only: [:new]
@@ -36,6 +36,11 @@ class PostsController < ApplicationController
     Post.find(params[:id]).destroy
     flash[:success] = "ポストが削除されました"
     redirect_to keijiban_url
+  end
+
+  def search
+    @posts = Post.search(params[:search])
+    @communities = Community.all.limit(5)
   end
 
     private

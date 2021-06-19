@@ -1,0 +1,57 @@
+<div class="row">
+  <div class="col-8">
+    <span class="btn btn-outline-primary disabled h4 mb">人気トピ</span>
+    <%= form_tag(search_path,:method => 'get', class: "ml-3", style: "display: inline-block;") do %>
+      <%= text_field_tag :search %>
+      <%= submit_tag '検索', :name => nil %>
+    <% end %>
+    <% if logged_in?%>
+      <%= link_to "トピ作成", communities_path, class:"btn btn-primary float-right h4" %>
+    <% else %>
+      <%= link_to "ログインしてトピ作成", login_path, class:"btn btn-primary float-right h4 mb" %>
+    <% end %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-8 col-xs-12">
+    <% @posts.each do |post| %>
+  <div class="card bg-light p-3 mb-1">
+    <div class="row">
+      <div class="col-1 text-center ">
+        <div id="vote-actions-<%= post.id %>" class="vote" data-id="<%= post.id %>">
+          <div class="fa fa-arrow-up upvote <%= is_upvoted post %>"></div>
+          <span class="font-weight-bold score"><%= post.score %></span>
+          <div class="fa fa-arrow-down downvote <%= is_downvoted post %>"></div>
+        </div>
+      </div>
+      <div class="col-11">
+        <p><small><%= link_to post.community.name, community_path(post.community) %> Posted by <%= link_to post.user.name, user_path(post.user) %> <%= time_ago_in_words post.created_at %> ago</small></p>
+        <h4 class="mb-2"><%= link_to post.title, community_post_path(post.community_id, post) %></h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-1 text-center ">
+      </div>
+      <div class="col-md-11">
+        <p><%= truncate post.body, length: 200 %></p>
+        <p>
+        <%= image_tag post.image.variant(resize: "200x200") if post.image.attached? %>
+        </p>
+      </div>
+    </div>
+  </div>
+<% end %>
+  </div>
+  <div class="col-md-4 col-xs-12">
+    <div class="card">
+    <h5 class="card-header text-dark">新しいコミュニティ</h5>
+      <ul class="list-group list-group-flush">
+        <% @communities.each do |community| %>
+        <li class="list-group-item  "><%= link_to community.name, community_path(community) %></li>
+        <% end %>
+      </ul>
+    </div>
+
+    <%= link_to "すべてのコミュニティを見る", communities_path,  class: "btn btn-primary mt-2" %>
+  </div>
+</div>

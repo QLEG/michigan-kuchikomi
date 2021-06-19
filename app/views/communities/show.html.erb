@@ -1,11 +1,19 @@
-<div class="row mb-4">
+<div class="row mb-3">
     <h3><%= @community.name %></h3>
-    <% if @is_subscribed %>
-      <%= link_to "トピ作成/Create New Post", new_community_post_path(@community), class: "btn btn-primary ml-5 float-right" %>
-    <% else %>
-      <%= render partial: "communities/subscribe", locals: { community_id: @community.id } %>
-    <% end %>
 </div>
+  <div class="row mb-2">
+    <div class="col-8">
+      <%= form_tag(search_path,:method => 'get', class: "ml-3", style: "display: inline-block;") do %>
+        <%= text_field_tag :search %>
+        <%= submit_tag '検索', :name => nil %>
+      <% end %>
+      <% if @is_subscribed %>
+        <%= link_to "トピ作成/Create New Post", new_community_post_path(@community), class: "btn btn-primary ml-5 float-right" %>
+      <% else %>
+        <%= render partial: "communities/subscribe", locals: { community_id: @community.id } %>
+      <% end %>
+    </div>
+  </div>
 <div class="row">
   <div class="col-sm-8">
     <%= render partial: "posts/list", locals: {posts: @posts } %>

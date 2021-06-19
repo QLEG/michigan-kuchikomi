@@ -13,4 +13,9 @@ class Post < ApplicationRecord
       0
     end
   end
+
+  def self.search(keyword)
+    Post.where(["title like? OR body like?", "%#{keyword}%", "%#{keyword}%"])
+  end
+
 end
