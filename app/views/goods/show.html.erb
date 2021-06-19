@@ -4,33 +4,34 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-md-6 text-right">
+<div class="col-md-2"></div>
+  <div class="col-md-4 text-right">
   <%= image_tag @good.image.variant(resize: "300x300") if @good.image.attached? %>
   </div>
 
-  <div class="col-md-6">
+  <div class="col-md-4">
     <table border="1" class="mb-3">
     <tr>
       <td class="bg-gray pl-2">出品者</td>
       <td><span class="user pl-2 pr-2"><%= link_to @good.user.name, @good.user %></span></td>
     </tr>
     <tr>
-    <td class="pl-2">商品の状態</td>
-    <td><span class="@goods_condition pl-2"><%= @good.goods_condition %></span></td>
+    <td class="pl-2 pr-1">商品の状態</td>
+    <td><span class="@goods_condition pl-2 pr-2"><%= @good.goods_condition %></span></td>
     </tr>
     <tr>
-    <td class="pl-2 pr-2">受け渡しの方法</td>
-    <td><span class="delivery_condition pl-2"><%= @good.delivery_condition %></span></td>
-    </tr>
-
-    <tr>
-    <td class="pl-2">地域</td>
-    <td><span class="area pl-2"><%= @good.area %></span></td>
+    <td class="pl-2 pr-1">受け渡しの方法</td>
+    <td><span class="delivery_condition pl-2 pr-2"><%= @good.delivery_condition %></span></td>
     </tr>
 
     <tr>
-    <td class="pl-2">サイズ</td>
-    <td><span class="size pl-2"><%= @good.size %></span></td>
+    <td class="pl-2 pr-1">地域</td>
+    <td><span class="area pl-2 pr-2"><%= @good.area %></span></td>
+    </tr>
+
+    <tr>
+    <td class="pl-2 pr-1">サイズ</td>
+    <td><span class="size pl-2 pr-2"><%= @good.size %></span></td>
     </tr>
 
     </table>
@@ -39,12 +40,20 @@
                                        data: { confirm: "削除されると元に戻せませんがよろしいですか？" } %>
     <% end %>
   </div>
+  <div class="col-md-2"></div>
 </div>
-<div class="row text-center">
-  <div class="col-md-12 mt-5">
-    <h2 class="mb-3">$ <%= @good.price %></h2>
-    <span class="description">商品の説明・詳細<%= simple_format(@good.description) %></span>
+<div class="row mt-3">
+  <div class="col-md-12 text-center">
+    <h1 class="mb-3">$ <%= @good.price %></h1>
   </div>
+</div>
+<div class="row">
+<div class="col-md-3"></div>
+  <div class="col-md-6 mt-1">
+    <h5 class="description text-center mb-4">商品の説明・詳細</h5>
+    <span><%= simple_format(@good.description) %></span>
+  </div>
+  <div class="col-md-3"></div>
 </div>
 <div class="row">
 <div class="col-md-12 text-right">
