@@ -75,7 +75,6 @@ class User < ApplicationRecord
   end
 
   def feed
-    Micropost.where("user_id = ?", id)
   end
   
   def upvoted_post_ids
