@@ -84,6 +84,23 @@ class User < ApplicationRecord
     self.votes.where(upvote: false).pluck(:post_id)
   end
 
+  def change
+    add_column :users, :uid, :string
+    add_column :users, :provider, :string
+    add_column :users, :image_url, :string
+  end
+
+  def self.find_or_create_form_auth(auth)
+    provider = auth[:provider]
+    uid = auth[:uid]
+    name = auth[:info][:name]
+    image = auth[:info][:image]
+
+    self.find_or_create_by(provider: provider, uid: uid) do |user|
+      user.name = name
+      user.image_url = image
+    end
+  end
 
   private
 

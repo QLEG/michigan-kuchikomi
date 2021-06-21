@@ -3,6 +3,13 @@ class SessionsController < ApplicationController
   end
 
   def create
+    auth = request.env['omniauth.auth']
+    if auth.present?
+      user = User.find_or_create_form_auth(request.env['omniauth.auth'])
+      session[:user_id] = user.id
+      flash[:success] = "ユーザー認証が完了しました。"
+      redirect_to user
+    else
     user = User.find_by(email: params[:session][:email].downcase)
     if user&.authenticate(params[:session][:password])
       if user.activated?
@@ -21,6 +28,7 @@ class SessionsController < ApplicationController
       render 'new'
     end
   end
+end
 
   def destroy #reset_session でもOK?
     log_out

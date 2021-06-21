@@ -23,4 +23,5 @@ Rails.application.routes.draw do
   post '/login/guest_sign_in', to: 'sessions#new_guest'
   resources :goods
   get 'search' => 'posts#search'
+  get 'auth/:provider/callback', to: 'sessions#create'
 end
