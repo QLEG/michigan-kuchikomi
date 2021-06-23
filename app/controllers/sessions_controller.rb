@@ -6,9 +6,9 @@ class SessionsController < ApplicationController
     auth = request.env['omniauth.auth']
     if auth.present?
       user = User.find_or_create_form_auth(request.env['omniauth.auth'])
-      session[:user_id] = user.id
+      session[:user_id] = user.uid
       flash[:success] = "ユーザー認証が完了しました。"
-      redirect_to user
+      redirect_to root_path
     else
     user = User.find_by(email: params[:session][:email].downcase)
     if user&.authenticate(params[:session][:password])
@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
         redirect_back_or user
       else
         message  = " アカウントが有効になっていません "
-        message += "登録されているEメールアドレスに届いたアクティベーション用のリンクを使用して、アカウントを有効化しましょう"
+        message += "登録されているEメールアドレスに届いたアクティベーション用のリンクを使用して、アカウントを有効化してください"
         flash[:warning] = message
         redirect_to root_url
       end
